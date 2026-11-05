@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX || "";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  assetPrefix: assetPrefix || undefined,
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
