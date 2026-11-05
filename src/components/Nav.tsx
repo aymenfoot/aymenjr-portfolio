@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "#projects", label: "Projects" },
@@ -31,7 +32,7 @@ export default function Nav() {
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-[var(--bg)]/80 backdrop-blur-md border-b border-[var(--border)]" : ""}`}>
         <nav className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)]" />
+            <Logo className="w-7 h-7 text-[var(--accent)]" />
             <span className="display font-semibold tracking-tight text-lg">AYMEN JR.</span>
           </a>
           <ul className="hidden md:flex items-center gap-10 text-sm text-[var(--text-muted)]">

@@ -1,3 +1,5 @@
+import { Mail } from "lucide-react";
+
 export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32">
@@ -21,7 +23,13 @@ export default function Contact() {
           >
             Let&apos;s Connect
           </a>
-          <p className="mt-6 text-sm text-[var(--text-dim)]">
+          <a
+            href="mailto:aymendipo604@gmail.com"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition"
+          >
+            <Mail size={16} /> aymendipo604@gmail.com
+          </a>
+          <p className="mt-2 text-sm text-[var(--text-dim)]">
             github.com/aymenfoot
           </p>
         </div>
