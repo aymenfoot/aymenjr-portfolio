@@ -15,23 +15,38 @@ export default function About() {
         </div>
         <div className="lg:col-span-7 space-y-5 text-[var(--text-muted)] leading-relaxed text-lg">
           <p>
-            I&apos;m Aymen Jr., an aspiring AI Engineer and independent builder.
+            I&apos;m Aymen Jr., an AI Engineer and independent builder.
           </p>
           <p>
-            I started my AI engineering journey around nine months ago, beginning with automation tools
-            like n8n. My curiosity quickly pushed me beyond no-code automation and toward understanding
-            how software actually works.
+            I initially explored AI through automation tools such as n8n. However, I soon became more
+            curious about what was happening behind the tools. I didn&apos;t want to remain someone who
+            simply connects existing tools together. I wanted to understand the technology, the code,
+            and the engineering behind it.
           </p>
           <p>
-            I began learning programming with C++, then moved into Python and deeper into AI engineering.
-            Over time, my focus shifted from simply learning tools to building, testing, integrating, and
-            running real software projects.
+            That curiosity led me to start learning C++, followed by Python. From there, I went deeper
+            into AI Engineering, studying through a combination of free and paid courses and educational
+            programs, including courses from IBM.
           </p>
           <p>
-            Today, I focus on developing intelligent systems, AI agents, automation workflows, and
-            practical applications that address real business challenges. I&apos;m still learning,
-            experimenting, and building — one project at a time.
+            Over time, I realized that learning concepts alone wasn&apos;t enough. I wanted to turn that
+            knowledge into real, working systems. So I decided to shift my focus toward practical
+            engineering: designing, developing, testing, improving, and running actual projects.
           </p>
+          <p>
+            Today, my focus is on building practical AI-powered systems that solve real business
+            problems, with an emphasis on engineering, reliability, and real-world implementation.
+          </p>
+          <div className="pt-6 border-t border-[var(--border)] flex items-baseline gap-6">
+            <div>
+              <div className="display text-5xl font-semibold text-[var(--accent)]">09</div>
+              <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mt-1">Months learning</div>
+            </div>
+            <div>
+              <div className="display text-5xl font-semibold text-[var(--text)]">03</div>
+              <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mt-1">Systems built</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
