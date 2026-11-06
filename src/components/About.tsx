@@ -1,7 +1,9 @@
 
+import Section from "./Section";
+
 export default function About() {
   return (
-    <section id="about" className="py-16 md:py-24">
+    <Section id="about" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
           <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">The person behind the builds</p>
@@ -37,13 +39,6 @@ export default function About() {
             Today, my focus is on building practical AI-powered systems that solve real business
             problems, with an emphasis on engineering, reliability, and real-world implementation.
           </p>
-          <p>
-            I approach software development through a combination of engineering thinking and
-            AI-assisted execution. I define system requirements, shape architectures, direct
-            specialized AI agents, and oversee implementation, testing, debugging, and continuous
-            improvement. My focus is not simply on generating code, but on ensuring that the resulting
-            systems solve real problems and work as intended.
-          </p>
           <div className="pt-6 border-t border-[var(--border)] flex items-baseline gap-6">
             <div>
               <div className="display text-5xl font-semibold text-[var(--accent)]">09</div>
@@ -56,6 +51,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
