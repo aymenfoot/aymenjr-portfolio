@@ -50,7 +50,7 @@ export default function SystemModal({
       />
       <div
         ref={panelRef}
-        className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] shadow-2xl"
+        className="relative w-full max-w-6xl max-h-[92vh] overflow-y-auto rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] shadow-2xl"
       >
         <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 border-b border-[var(--border)] bg-[var(--bg-elev)]/95 backdrop-blur-md">
           <h3 className="display text-lg font-semibold">{title}</h3>
@@ -63,7 +63,7 @@ export default function SystemModal({
             <X size={18} />
           </button>
         </div>
-        <div className="p-6 md:p-8">{children}</div>
+        <div className="p-6 md:p-10">{children}</div>
       </div>
     </div>,
     document.body
