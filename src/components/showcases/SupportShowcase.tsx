@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type Scenario = "order" | "return" | "damaged";
+type Scenario = "order" | "return" | "damaged" | "policy";
 
 const scenarios: Record<Scenario, { label: string; customer: string; steps: { title: string; body: string; kind: string }[] }> = {
   order: {
@@ -30,13 +30,24 @@ const scenarios: Record<Scenario, { label: string; customer: string; steps: { ti
   },
   damaged: {
     label: "Damaged product",
-    customer: "My product arrived damaged, and I want a refund.",
+    customer: "My product arrived damaged, and I need someone to help me.",
     steps: [
       { title: "Incoming ticket", body: "Customer message received and parsed.", kind: "ticket" },
       { title: "Intent detection", body: "Classified as damage_claim (sensitive).", kind: "intent" },
       { title: "Order retrieval", body: "lookup_order(\"ORD-1002\") → delivered.", kind: "tool" },
       { title: "Escalation check", body: "Damage claim detected → routed to human support.", kind: "escalate" },
       { title: "Human handoff", body: "Ticket escalated with full context and evidence.", kind: "resolve" },
+    ],
+  },
+  policy: {
+    label: "Policy question",
+    customer: "Can you explain your return policy?",
+    steps: [
+      { title: "Incoming ticket", body: "Customer message received and parsed.", kind: "ticket" },
+      { title: "Intent detection", body: "Classified as policy_question.", kind: "intent" },
+      { title: "Knowledge search", body: "Retrieved return policy document.", kind: "rag" },
+      { title: "Evidence display", body: "Source: return_policy.md — 30-day window, unused, original packaging.", kind: "rag" },
+      { title: "Answer generated", body: "Responded with policy summary and source reference.", kind: "resolve" },
     ],
   },
 };
@@ -50,8 +61,11 @@ export default function SupportShowcase() {
   const prev = () => setStep((v) => Math.max(v - 1, 0));
   const reset = (sc: Scenario) => { setScenario(sc); setStep(0); };
 
+  const outcome = scenario === "damaged" ? "Escalated to human" : scenario === "return" ? "Return approved" : scenario === "policy" ? "Policy explained" : "Status provided";
+  const confidence = scenario === "damaged" ? "Low → escalate" : "High → auto-resolve";
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div className="flex flex-wrap gap-2">
         {(Object.keys(scenarios) as Scenario[]).map((k) => (
           <button
@@ -68,8 +82,7 @@ export default function SupportShowcase() {
         ))}
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6">
-        {/* Ticket / customer */}
+      <div className="grid lg:grid-cols-2 gap-5">
         <div className="surface rounded-2xl p-5">
           <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mb-3">Incoming ticket</div>
           <div className="flex items-start gap-3">
@@ -85,7 +98,6 @@ export default function SupportShowcase() {
           </div>
         </div>
 
-        {/* Pipeline */}
         <div className="surface rounded-2xl p-5">
           <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mb-3">Processing pipeline</div>
           <div className="space-y-2">
@@ -118,7 +130,6 @@ export default function SupportShowcase() {
         </div>
       </div>
 
-      {/* Evidence / result */}
       <div className="surface rounded-2xl p-5">
         <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mb-3">Evidence & resolution</div>
         <div className="grid md:grid-cols-3 gap-4 text-sm">
@@ -128,13 +139,11 @@ export default function SupportShowcase() {
           </div>
           <div>
             <div className="text-xs text-[var(--text-dim)] mb-1">Outcome</div>
-            <div className="text-[var(--accent)] font-medium">
-              {scenario === "damaged" ? "Escalated to human" : scenario === "return" ? "Return approved" : "Status provided"}
-            </div>
+            <div className="text-[var(--accent)] font-medium">{outcome}</div>
           </div>
           <div>
             <div className="text-xs text-[var(--text-dim)] mb-1">Confidence</div>
-            <div className="text-[var(--text)]">{scenario === "damaged" ? "Low → escalate" : "High → auto-resolve"}</div>
+            <div className="text-[var(--text)]">{confidence}</div>
           </div>
         </div>
       </div>
