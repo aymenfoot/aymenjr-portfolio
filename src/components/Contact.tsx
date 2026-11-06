@@ -1,8 +1,10 @@
 import { Mail } from "lucide-react";
 
+import Section from "./Section";
+
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <Section id="contact" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl">
           <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Contact</p>
@@ -34,6 +36,6 @@ export default function Contact() {
           </p>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

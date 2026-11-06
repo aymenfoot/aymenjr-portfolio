@@ -1,9 +1,14 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Hero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   return (
-    <section id="top" className="relative min-h-screen flex items-center overflow-hidden noise">
+    <section id="top" ref={ref} className="relative min-h-screen flex items-center overflow-hidden noise">
       <div className="absolute inset-0 grid-bg opacity-30" aria-hidden="true" />
       <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-[var(--accent)]/10 blur-[140px]" aria-hidden="true" />
 
@@ -59,7 +64,7 @@ export default function Hero() {
         {/* Visual */}
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative hidden lg:flex items-center justify-center">
-          <div className="relative w-[480px] h-[480px]">
+          <motion.div style={{ y, opacity }} className="relative w-[480px] h-[480px]">
             <svg viewBox="0 0 480 480" className="w-full h-full" aria-hidden="true">
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -86,7 +91,7 @@ export default function Hero() {
               <line x1="190" y1="160" x2="300" y2="275" stroke="#60a5fa" strokeWidth="0.8" strokeOpacity="0.5" />
               <line x1="300" y1="275" x2="200" y2="345" stroke="#a78bfa" strokeWidth="0.8" strokeOpacity="0.5" />
             </svg>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

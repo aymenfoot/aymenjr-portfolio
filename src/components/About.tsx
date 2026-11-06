@@ -1,7 +1,9 @@
 
+import Section from "./Section";
+
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32">
+    <Section id="about" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
           <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">The person behind the builds</p>
@@ -49,6 +51,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -85,8 +85,8 @@ export default function Projects() {
                   View on GitHub <ArrowUpRight size={14} />
                 </a>
               </div>
-              <div className="lg:col-span-7 relative">
-                <div className="absolute -inset-6 bg-[var(--accent)]/5 blur-3xl rounded-3xl" aria-hidden="true" />
+              <div className="lg:col-span-7 relative group">
+                <div className="absolute -inset-6 bg-[var(--accent)]/5 blur-3xl rounded-3xl group-hover:bg-[var(--accent)]/10 transition-colors duration-500" aria-hidden="true" />
                 {p.mockup}
               </div>
             </div>

@@ -1,6 +1,6 @@
 "use client";
+
 import { useEffect, useState } from "react";
-import Logo from "@/components/Logo";
 
 const links = [
   { href: "#projects", label: "Projects" },
@@ -13,6 +13,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => {
@@ -23,21 +24,51 @@ export default function Nav() {
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(`#${e.target.id}`);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+    links.forEach((l) => {
+      const el = document.querySelector(l.href);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <>
       <div className="scroll-progress" style={{ width: `${progress}%` }} aria-hidden="true" />
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-[var(--bg)]/80 backdrop-blur-md border-b border-[var(--border)]" : ""}`}>
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-[var(--bg)]/80 backdrop-blur-md border-b border-[var(--border)]" : ""
+        }`}
+      >
         <nav className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2">
-            <Logo className="w-7 h-7 text-[var(--accent)]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)]" />
             <span className="display font-semibold tracking-tight text-lg">AYMEN JR.</span>
           </a>
-          <ul className="hidden md:flex items-center gap-10 text-sm text-[var(--text-muted)]">
+          <ul className="hidden md:flex items-center gap-10 text-sm">
             {links.map((l) => (
-              <li key={l.href}><a href={l.href} className="hover:text-[var(--text)] transition-colors">{l.label}</a></li>
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className={`transition-colors ${
+                    active === l.href ? "text-[var(--accent)]" : "text-[var(--text-muted)] hover:text-[var(--text)]"
+                  }`}
+                >
+                  {l.label}
+                </a>
+              </li>
             ))}
           </ul>
           <div className="hidden md:flex items-center gap-2 text-xs font-mono text-[var(--text-dim)]">
@@ -52,7 +83,11 @@ export default function Nav() {
           <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg-elev)]">
             <ul className="px-6 py-4 space-y-3">
               {links.map((l) => (
-                <li key={l.href}><a href={l.href} onClick={() => setOpen(false)} className="block text-sm text-[var(--text-muted)] hover:text-[var(--text)]">{l.label}</a></li>
+                <li key={l.href}>
+                  <a href={l.href} onClick={() => setOpen(false)} className="block text-sm text-[var(--text-muted)] hover:text-[var(--text)]">
+                    {l.label}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>

@@ -1,3 +1,4 @@
+import Section from "./Section";
 import { BookOpen, Code2, Cpu, Rocket } from "lucide-react";
 
 const steps = [
@@ -9,7 +10,7 @@ const steps = [
 
 export default function Journey() {
   return (
-    <section id="journey" className="py-24 md:py-32 bg-[var(--bg-elev)]">
+    <Section id="journey" className="py-24 md:py-32 bg-[var(--bg-elev)]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-8 items-end mb-12">
           <div className="lg:col-span-6">
@@ -39,6 +40,6 @@ export default function Journey() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
