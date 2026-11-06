@@ -1,9 +1,7 @@
 
-import Section from "./Section";
-
 export default function About() {
   return (
-    <Section id="about" className="py-16 md:py-24">
+    <section id="about" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
           <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">The person behind the builds</p>
@@ -17,33 +15,38 @@ export default function About() {
         </div>
         <div className="lg:col-span-7 space-y-5 text-[var(--text-muted)] leading-relaxed text-lg">
           <p>
-            I&apos;m Aymen Jr., an AI Engineer and independent builder.
+            I&apos;m Aymen Jr., an AI Engineer and independent builder focused on designing and building
+            intelligent software systems.
           </p>
           <p>
-            I initially explored AI through automation tools such as n8n. However, I soon became more
-            curious about what was happening behind the tools. I didn&apos;t want to remain someone who
-            simply connects existing tools together. I wanted to understand the technology, the code,
-            and the engineering behind it.
+            My journey began with exploring AI automation tools like n8n. But my curiosity quickly went
+            beyond using existing tools. I wanted to understand what happens beneath the surface — how
+            software works, how systems are designed, and how intelligence can be engineered into real
+            applications.
           </p>
           <p>
-            That curiosity led me to start learning C++, followed by Python. From there, I went deeper
-            into AI Engineering, studying through a combination of free and paid courses and educational
-            programs, including courses from IBM.
+            That curiosity led me into programming, starting with C++ and then Python, before expanding
+            into AI Engineering and software development. Through independent learning, structured
+            courses, and continuous experimentation, I began developing the technical foundations needed
+            to build systems of my own.
           </p>
           <p>
-            Over time, I realized that learning concepts alone wasn&apos;t enough. I wanted to turn that
-            knowledge into real, working systems. So I decided to shift my focus toward practical
-            engineering: designing, developing, testing, improving, and running actual projects.
+            What matters most to me is turning ideas into working products. I enjoy taking a problem,
+            understanding its requirements, designing the underlying system, and bringing the solution to
+            life through code.
           </p>
           <p>
-            Today, my focus is on building practical AI-powered systems that solve real business
-            problems, with an emphasis on engineering, reliability, and real-world implementation.
+            Today, I independently design and build AI-powered applications, intelligent assistants, and
+            software systems for a variety of real-world needs and industries. From automating complex
+            workflows and developing autonomous AI agents to creating intelligent applications that solve
+            specific business and operational challenges, I focus on engineering complete solutions —
+            from their underlying logic and architecture to their integrations and user experiences.
+          </p>
+          <p>
+            I believe great engineering is not simply about making something work. It&apos;s about building
+            something useful, reliable, and thoughtfully designed.
           </p>
           <div className="pt-6 border-t border-[var(--border)] flex items-baseline gap-6">
-            <div>
-              <div className="display text-5xl font-semibold text-[var(--accent)]">09</div>
-              <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mt-1">Months learning</div>
-            </div>
             <div>
               <div className="display text-5xl font-semibold text-[var(--text)]">03</div>
               <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mt-1">Systems built</div>
@@ -51,6 +54,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
