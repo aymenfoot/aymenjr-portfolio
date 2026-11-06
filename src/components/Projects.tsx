@@ -38,7 +38,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32">
+    <section id="projects" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Selected Projects / 2026</p>
         <h2 className="display mt-4 text-4xl md:text-6xl font-semibold tracking-tight leading-[0.9]">
@@ -51,7 +51,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="mt-20 space-y-24 md:space-y-32">
+      <div className="mt-12 space-y-16 md:space-y-24">
         {projects.map((p, i) => (
           <div key={p.name} className="max-w-7xl mx-auto px-6">
             <div className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>

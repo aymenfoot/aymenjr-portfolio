@@ -8,7 +8,7 @@ export default function Contact() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl">
           <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Contact</p>

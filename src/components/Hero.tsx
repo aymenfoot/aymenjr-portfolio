@@ -14,13 +14,13 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-6 pt-28 pb-16 w-full grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="inline-flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">
             <span className="w-10 h-px bg-[var(--accent)]" />
             AI Engineer & Independent Builder
           </motion.div>
 
-          <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
             className="display mt-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.9]">
             I build
             <br />
@@ -29,7 +29,7 @@ export default function Hero() {
             systems.
           </motion.h1>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 max-w-md text-lg text-[var(--text-muted)] leading-relaxed">
             From AI agents and intelligent automation to full-stack applications, I turn ideas into practical software systems.
           </motion.p>
@@ -38,7 +38,7 @@ export default function Hero() {
             href="#about"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[var(--border-strong)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition mb-6"
           >
             Meet the engineer behind the projects
@@ -62,7 +62,7 @@ export default function Hero() {
         </div>
 
         {/* Visual */}
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative hidden lg:flex items-center justify-center">
           <motion.div style={{ y, opacity }} className="relative w-[480px] h-[480px]">
             <svg viewBox="0 0 480 480" className="w-full h-full" aria-hidden="true">

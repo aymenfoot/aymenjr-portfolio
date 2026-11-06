@@ -5,19 +5,19 @@ import { useEffect, useState } from "react";
 type Msg = { from: "user" | "ai" | "tool"; text: string };
 
 const sequence: { delay: number; msgs: Msg[] }[] = [
-  { delay: 600, msgs: [{ from: "user", text: "Where is my order?" }] },
-  { delay: 900, msgs: [{ from: "tool", text: "lookup_order(\"ORD-1002\") ✓" }] },
+  { delay: 500, msgs: [{ from: "user", text: "Where is my order?" }] },
+  { delay: 700, msgs: [{ from: "tool", text: "lookup_order(\"ORD-1002\") ✓" }] },
   {
-    delay: 1100,
+    delay: 900,
     msgs: [
       {
         from: "ai",
-        text: "Your order ORD-1002 is delivered. Tracking: FDX-78901234.",
+        text: "Your order ORD-1002 is delivered.",
       },
     ],
   },
   {
-    delay: 2600,
+    delay: 2400,
     msgs: [
       {
         from: "ai",
@@ -38,7 +38,7 @@ export default function SupportDemo() {
     const run = () => {
       setMsgs([]);
       setTyping(false);
-      let t = 400;
+      let t = 300;
       sequence.forEach((s, idx) => {
         t += s.delay;
         const timer = setTimeout(() => {
@@ -52,7 +52,7 @@ export default function SupportDemo() {
       const reset = setTimeout(() => {
         if (cancelled) return;
         run();
-      }, t + 2800);
+      }, t + 2600);
       timers.push(reset);
     };
 
@@ -65,11 +65,14 @@ export default function SupportDemo() {
 
   return (
     <div className="surface rounded-2xl overflow-hidden shadow-2xl">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-[var(--border)] bg-[var(--surface-2)]">
-        <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
-        <span className="text-xs font-mono text-[var(--text-dim)]">nexa-support · live</span>
+      <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--border)] bg-[var(--surface-2)]">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+          <span className="text-xs font-mono text-[var(--text-dim)]">nexa-support · live</span>
+        </div>
+        <span className="text-[10px] font-mono text-[var(--text-dim)]">3 tickets resolved</span>
       </div>
-      <div className="p-5 space-y-3 min-h-[230px]">
+      <div className="p-5 space-y-3 min-h-[200px]">
         {msgs.map((m, idx) => (
           <div key={idx} className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}>
             <div
@@ -77,16 +80,16 @@ export default function SupportDemo() {
                 m.from === "user"
                   ? "bg-[var(--accent)] text-[var(--bg)]"
                   : m.from === "tool"
-                  ? "bg-[var(--surface-2)] text-[var(--accent-2)] font-mono text-xs border border-[var(--border)]"
+                  ? "bg-[var(--surface-2)] text-[var(--accent)] font-mono text-xs border border-[var(--border)]"
                   : "bg-[var(--surface-2)] text-[var(--text)]"
               }`}
             >
               {m.text}
               {m.from === "ai" && m.text.includes("delivered") && (
-                <div className="mt-2 pt-2 border-t border-[var(--border)] text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded bg-[var(--accent)]/10 text-[var(--accent)] font-mono">ORD-1002</span>
-                    <span className="text-[var(--text-muted)]">Delivered · FDX-78901234</span>
+                <div className="mt-2 pt-2 border-t border-[var(--border)]">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="px-2 py-0.5 rounded bg-[var(--accent)]/10 text-[var(--accent)] font-mono text-xs">ORD-1002</span>
+                    <span className="text-xs text-[var(--text-muted)]">Delivered · FDX-78901234</span>
                   </div>
                 </div>
               )}

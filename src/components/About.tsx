@@ -3,7 +3,7 @@ import Section from "./Section";
 
 export default function About() {
   return (
-    <Section id="about" className="py-24 md:py-32">
+    <Section id="about" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5">
           <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">The person behind the builds</p>
