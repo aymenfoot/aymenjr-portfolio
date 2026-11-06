@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import SupportMockup from "./mockups/SupportMockup";
-import OrderMockup from "./mockups/OrderMockup";
-import SalesMockup from "./mockups/SalesMockup";
+import SupportDemo from "./mockups/SupportDemo";
+import OrderDemo from "./mockups/OrderDemo";
+import SalesDemo from "./mockups/SalesDemo";
 
 const projects = [
   {
@@ -12,7 +12,7 @@ const projects = [
     points: ["Grounded answers with cited sources", "Product catalog & policy retrieval", "Order lookup integration", "Deterministic return/refund decisions", "Human escalation for sensitive cases", "Operational ROI analytics dashboard"],
     tech: ["Python", "RAG", "AI Agents", "Docker", "Pytest"],
     github: "https://github.com/aymenfoot/nexa-support",
-    mockup: <SupportMockup />,
+    mockup: <SupportDemo />,
   },
   {
     n: "02",
@@ -22,7 +22,7 @@ const projects = [
     points: ["LangGraph ReAct agent", "Seven specialized tools", "Conditional routing & automatic retries", "Order and shipment intelligence", "Return eligibility & initiation", "Optional Langfuse observability"],
     tech: ["Python", "LangGraph", "FastAPI", "Streamlit", "SQLite", "Langfuse"],
     github: "https://github.com/aymenfoot/nexa-order-intelligence",
-    mockup: <OrderMockup />,
+    mockup: <OrderDemo />,
   },
   {
     n: "03",
@@ -32,7 +32,7 @@ const projects = [
     points: ["Intelligent product recommendations", "Storefront AI chat widget", "Customizable administration panel", "Real-time interface settings", "Optional n8n workflow integration", "Shopify authentication & architecture"],
     tech: ["TypeScript", "Remix", "Shopify", "Prisma", "n8n"],
     github: "https://github.com/aymenfoot/nexa-sales",
-    mockup: <SalesMockup />,
+    mockup: <SalesDemo />,
   },
 ];
 
