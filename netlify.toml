@@ -2,7 +2,7 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "24"
 
 # Netlify auto-detects Next.js and uses the OpenNext adapter.
 # Do NOT set a custom publish directory — it overrides the adapter
