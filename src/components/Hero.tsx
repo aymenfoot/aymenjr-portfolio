@@ -39,10 +39,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition mb-6"
+            className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[var(--border-strong)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition mb-6"
           >
-            <span className="w-6 h-px bg-[var(--text-dim)]" />
             Meet the engineer behind the projects
+            <span className="text-xs">→</span>
           </motion.a>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}

@@ -1,10 +1,14 @@
-import { Mail } from "lucide-react";
+"use client";
 
-import Section from "./Section";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, ArrowUpRight } from "lucide-react";
 
 export default function Contact() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl">
           <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Contact</p>
@@ -17,25 +21,66 @@ export default function Contact() {
             I&apos;m interested in building intelligent products, solving meaningful problems, and
             collaborating on ambitious projects.
           </p>
-          <a
-            href="https://github.com/aymenfoot"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[var(--accent)] text-[var(--bg)] font-medium hover:opacity-90 transition"
-          >
-            Let&apos;s Connect
-          </a>
-          <a
-            href="mailto:aymendipo604@gmail.com"
-            className="mt-4 inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[var(--accent)] transition"
-          >
-            <Mail size={16} /> aymendipo604@gmail.com
-          </a>
-          <p className="mt-2 text-sm text-[var(--text-dim)]">
-            github.com/aymenfoot
-          </p>
+
+          <div className="mt-10">
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls="contact-options"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[var(--accent)] text-[var(--bg)] font-medium hover:opacity-90 transition"
+            >
+              Let&apos;s Connect
+              <motion.span
+                animate={{ rotate: open ? 45 : 0 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block"
+              >
+                +
+              </motion.span>
+            </button>
+
+            <AnimatePresence initial={false}>
+              {open && (
+                <motion.div
+                  id="contact-options"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden"
+                >
+                  <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="mailto:aymendipo604@gmail.com"
+                      className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+                    >
+                      <Mail size={18} className="text-[var(--accent)]" />
+                      <span className="text-sm">aymendipo604@gmail.com</span>
+                    </a>
+                    <a
+                      href="https://github.com/aymenfoot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+                    >
+                      <ArrowUpRight size={18} className="text-[var(--accent)]" />
+                      <span className="text-sm">github.com/aymenfoot</span>
+                    </a>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                    className="mt-4 text-xs text-[var(--text-dim)] hover:text-[var(--text-muted)] transition"
+                  >
+                    Close
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
