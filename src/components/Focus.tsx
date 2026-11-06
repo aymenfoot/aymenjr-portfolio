@@ -1,4 +1,4 @@
-import { Bot, Zap, Code2, Database, ShoppingCart, Server, ShieldCheck } from "lucide-react";
+import { Bot, Zap, Code2, Database, ShoppingCart, Server, ShieldCheck, Cpu } from "lucide-react";
 
 const caps = [
   { icon: Bot, title: "AI Agents & Autonomous Systems", desc: "Intelligent agents that reason, use tools, execute tasks, and orchestrate complex workflows." },
@@ -6,8 +6,9 @@ const caps = [
   { icon: Code2, title: "Intelligent Assistants", desc: "Conversational assistants for customer support, bookings, recommendations, and other real-world interactions." },
   { icon: Server, title: "Business Process Automation", desc: "Intelligent automation systems that streamline operations and reduce repetitive work." },
   { icon: Database, title: "RAG & Knowledge Systems", desc: "Systems that retrieve, process, and reason over information to deliver accurate, context-aware responses." },
-  { icon: ShoppingCart, title: "Backend Engineering & System Integration", desc: "Building APIs, backend services, databases, and integrations that bring software systems together." },
+  { icon: ShoppingCart, title: "Backend Engineering & APIs", desc: "Building APIs, backend services, databases, and integrations that bring software systems together." },
   { icon: ShieldCheck, title: "System Architecture & Reliability", desc: "Designing maintainable, scalable, and reliable systems built for real-world use." },
+  { icon: Cpu, title: "AI Infrastructure & Integration", desc: "Building the infrastructure and connecting the services, models, and tools that power intelligent software systems." },
 ];
 
 export default function Focus() {
