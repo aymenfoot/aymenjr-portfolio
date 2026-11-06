@@ -1,7 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import HowIEngineer from "@/components/HowIEngineer";
 import Journey from "@/components/Journey";
+import TechnicalExpertise from "@/components/TechnicalExpertise";
 import Projects from "@/components/Projects";
 import Focus from "@/components/Focus";
 import Contact from "@/components/Contact";
@@ -13,7 +15,9 @@ export default function Home() {
       <Nav />
       <Hero />
       <About />
+      <HowIEngineer />
       <Journey />
+      <TechnicalExpertise />
       <Projects />
       <Focus />
       <Contact />

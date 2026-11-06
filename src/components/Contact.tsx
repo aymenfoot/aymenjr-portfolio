@@ -18,8 +18,9 @@ export default function Contact() {
             <span className="text-[var(--accent)]">worth building?</span>
           </h2>
           <p className="mt-6 text-lg text-[var(--text-muted)] leading-relaxed max-w-xl">
-            I&apos;m interested in building intelligent products, solving meaningful problems, and
-            collaborating on ambitious projects.
+            I am interested in engineering intelligent products, solving meaningful business
+            challenges, and collaborating on ambitious projects where AI and software engineering
+            can create real value.
           </p>
 
           <div className="mt-10">

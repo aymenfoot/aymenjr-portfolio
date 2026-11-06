@@ -31,7 +31,7 @@ export default function Hero() {
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 max-w-md text-lg text-[var(--text-muted)] leading-relaxed">
-            From AI agents and intelligent automation to full-stack applications, I turn ideas into practical software systems.
+            I architect and build intelligent software systems by combining AI engineering, software engineering, and AI-orchestrated development. From autonomous agents and intelligent business applications to complex backend workflows, I direct the process of turning ideas into functional, tested, and practical software solutions.
           </motion.p>
 
           <motion.a
