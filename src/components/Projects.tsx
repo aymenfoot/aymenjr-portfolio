@@ -1,7 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import SupportDemo from "./mockups/SupportDemo";
-import OrderDemo from "./mockups/OrderDemo";
-import SalesDemo from "./mockups/SalesDemo";
+import SystemModal from "./SystemModal";
+import SupportShowcase from "./showcases/SupportShowcase";
+import SupportMockup from "./mockups/SupportMockup";
+import OrderShowcase from "./showcases/OrderShowcase";
+import OrderMockup from "./mockups/OrderMockup";
+import SalesShowcase from "./showcases/SalesShowcase";
+import SalesMockup from "./mockups/SalesMockup";
 
 const projects = [
   {
@@ -9,20 +16,24 @@ const projects = [
     name: "Nexa Support",
     category: "AI Customer Support System",
     desc: "An AI-powered customer support system for e-commerce, combining retrieval-augmented generation, policy-aware refund decisions, order lookups, and intelligent human escalation.",
-    points: ["Grounded answers with cited sources", "Product catalog & policy retrieval", "Order lookup integration", "Deterministic return/refund decisions", "Human escalation for sensitive cases", "Operational ROI analytics dashboard"],
+    points: ["Grounded answers with cited sources", "Product catalog & policy retrieval", "Order lookup integration", "Deterministic return/refund decisions", "Human escalation for sensitive cases", "Operations dashboard with real ROI metrics"],
     tech: ["Python", "RAG", "AI Agents", "Docker", "Pytest"],
     github: "https://github.com/aymenfoot/nexa-support",
-    mockup: <SupportDemo />,
+    showcase: <SupportShowcase />,
+    mockup: <SupportMockup />,
+    showcaseTitle: "Nexa Support — Interactive Demo",
   },
   {
     n: "02",
     name: "Nexa Order Intelligence",
     category: "Agentic AI / Autonomous Workflows",
-    desc: "An intelligent ReAct-based e-commerce agent that orchestrates order lookups, shipment tracking, return eligibility checks, and customer service workflows through specialized tools.",
+    desc: "A ReAct AI agent that orchestrates order lookups, shipment tracking, return eligibility checks, and customer service workflows through specialized tools.",
     points: ["LangGraph ReAct agent", "Seven specialized tools", "Conditional routing & automatic retries", "Order and shipment intelligence", "Return eligibility & initiation", "Optional Langfuse observability"],
     tech: ["Python", "LangGraph", "FastAPI", "Streamlit", "SQLite", "Langfuse"],
     github: "https://github.com/aymenfoot/nexa-order-intelligence",
-    mockup: <OrderDemo />,
+    showcase: <OrderShowcase />,
+    mockup: <OrderMockup />,
+    showcaseTitle: "Nexa Order Intelligence — Interactive Demo",
   },
   {
     n: "03",
@@ -32,13 +43,17 @@ const projects = [
     points: ["Intelligent product recommendations", "Storefront AI chat widget", "Customizable administration panel", "Real-time interface settings", "Optional n8n workflow integration", "Shopify authentication & architecture"],
     tech: ["TypeScript", "Remix", "Shopify", "Prisma", "n8n"],
     github: "https://github.com/aymenfoot/nexa-sales",
-    mockup: <SalesDemo />,
+    showcase: <SalesShowcase />,
+    mockup: <SalesMockup />,
+    showcaseTitle: "Nexa Sales — Interactive Demo",
   },
 ];
 
 export default function Projects() {
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+
   return (
-    <section id="projects" className="py-16 md:py-24">
+    <section id="projects" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Selected Projects / 2026</p>
         <h2 className="display mt-4 text-4xl md:text-6xl font-semibold tracking-tight leading-[0.9]">
@@ -51,7 +66,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="mt-12 space-y-16 md:space-y-24">
+      <div className="mt-20 space-y-24 md:space-y-32">
         {projects.map((p, i) => (
           <div key={p.name} className="max-w-7xl mx-auto px-6">
             <div className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
@@ -76,23 +91,47 @@ export default function Projects() {
                     <span key={t} className="px-2.5 py-1 rounded-md text-xs font-mono border border-[var(--border)] text-[var(--text-muted)]">{t}</span>
                   ))}
                 </div>
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--text)] hover:text-[var(--accent)] transition"
-                >
-                  View on GitHub <ArrowUpRight size={14} />
-                </a>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <button
+                    onClick={() => setOpenIdx(i)}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--accent)] text-[var(--bg)] font-medium text-sm hover:opacity-90 transition"
+                  >
+                    EXPLORE INTERACTIVE DEMO
+                  </button>
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--border-strong)] text-[var(--text)] font-medium text-sm hover:bg-[var(--surface)] transition"
+                  >
+                    View on GitHub <ArrowUpRight size={14} />
+                  </a>
+                </div>
               </div>
-              <div className="lg:col-span-7 relative group">
+              <div className="lg:col-span-7 relative group cursor-pointer" onClick={() => setOpenIdx(i)}>
                 <div className="absolute -inset-6 bg-[var(--accent)]/5 blur-3xl rounded-3xl group-hover:bg-[var(--accent)]/10 transition-colors duration-500" aria-hidden="true" />
-                {p.mockup}
+                <div className="surface rounded-2xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.01]">
+                  {p.mockup}
+                </div>
+                <div className="mt-4 text-center text-xs font-mono text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors">
+                  Click to explore interactive demo →
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {projects.map((p, i) => (
+        <SystemModal
+          key={p.name}
+          open={openIdx === i}
+          onClose={() => setOpenIdx(null)}
+          title={p.showcaseTitle}
+        >
+          {p.showcase}
+        </SystemModal>
+      ))}
     </section>
   );
 }
