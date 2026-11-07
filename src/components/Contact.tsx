@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, ArrowUpRight } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Contact() {
   const [open, setOpen] = useState(false);
@@ -57,15 +57,6 @@ export default function Contact() {
                     >
                       <Mail size={18} className="text-[var(--accent)]" />
                       <span className="text-sm">aymendipo604@gmail.com</span>
-                    </a>
-                    <a
-                      href="https://github.com/aymenfoot"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
-                    >
-                      <ArrowUpRight size={18} className="text-[var(--accent)]" />
-                      <span className="text-sm">github.com/aymenfoot</span>
                     </a>
                   </div>
                   <button
