@@ -13,7 +13,7 @@ export default function About() {
           </h2>
         </div>
         <div className="lg:col-span-8">
-          <div className="max-w-prose space-y-7 text-[var(--text-muted)] leading-[1.7] text-base md:text-lg">
+          <div className="max-w-prose space-y-8 text-[var(--text-muted)] leading-[1.75] text-base md:text-lg">
             <p>
               I&apos;m Aymen Jr., an AI Engineer and independent builder focused on designing and building
               intelligent software systems.
