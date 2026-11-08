@@ -13,7 +13,7 @@ export default function About() {
           </h2>
         </div>
         <div className="lg:col-span-8">
-          <div className="max-w-prose space-y-6 text-[var(--text-muted)] leading-relaxed text-base md:text-lg">
+          <div className="max-w-prose space-y-7 text-[var(--text-muted)] leading-[1.7] text-base md:text-lg">
             <p>
               I&apos;m Aymen Jr., an AI Engineer and independent builder focused on designing and building
               intelligent software systems.
@@ -27,19 +27,19 @@ export default function About() {
               applications.
             </p>
             <p>
-              That curiosity led me into programming, starting with <span className="font-semibold text-[#8a9688]">C++ and then Python</span>, before expanding
-              into <span className="font-semibold text-[#8a9688]">AI Engineering and software development</span>. Through independent learning, structured
+              That curiosity led me into programming, starting with <span className="font-semibold">C++ and then Python</span>, before expanding
+              into <span className="font-semibold">AI Engineering and software development</span>. Through independent learning, structured
               courses, and continuous experimentation, I began developing the technical foundations needed
               to build systems of my own.
             </p>
             <p>
-              What matters most to me is <span className="font-semibold text-[#8a9688]">turning ideas into working products</span>. I enjoy taking a problem,
+              What matters most to me is <span className="font-semibold">turning ideas into working products</span>. I enjoy taking a problem,
               understanding its requirements, designing the underlying system, and bringing the solution to
               life through code.
             </p>
             <p>
-              Today, I focus primarily on <span className="font-semibold text-[#8a9688]">AI Engineering</span> — designing and building intelligent applications,
-              <span className="font-semibold text-[#8a9688]"> autonomous AI agents</span>, AI-powered assistants, and systems that combine models, data, tools, and
+              Today, I focus primarily on <span className="font-semibold">AI Engineering</span> — designing and building intelligent applications,
+              <span className="font-semibold"> autonomous AI agents</span>, AI-powered assistants, and systems that combine models, data, tools, and
               software into practical solutions. My work also extends to business automation, custom
               software development, web applications, and system integrations, allowing me to engineer
               complete products from their underlying architecture and backend logic to their interfaces
@@ -47,7 +47,7 @@ export default function About() {
             </p>
             <p>
               I believe great engineering is not simply about making something work. It&apos;s about building
-              something <span className="font-semibold text-[#8a9688]">useful, reliable, and thoughtfully designed</span>.
+              something <span className="font-semibold">useful, reliable, and thoughtfully designed</span>.
             </p>
           </div>
         </div>
