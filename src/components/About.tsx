@@ -19,9 +19,11 @@ export default function About() {
               intelligent software systems.
             </p>
             <p>
-              My journey began with exploring <span className="font-semibold text-[#8a9688]">AI automation tools like n8n</span>. But my curiosity quickly went
-              beyond using existing tools. I wanted to understand what happens beneath the surface — how
-              software works, how systems are designed, and how intelligence can be engineered into real
+              My journey began with experimenting with simple automation workflows and building small web
+              projects. Over time, I started exploring different areas of software development, turning
+              ideas and practical solutions into products. But my curiosity quickly went beyond simply
+              building things. I wanted to understand what happens beneath the surface — how software
+              works, how systems are designed, and how intelligence can be engineered into real
               applications.
             </p>
             <p>
@@ -36,11 +38,12 @@ export default function About() {
               life through code.
             </p>
             <p>
-              Today, I independently design and build <span className="font-semibold text-[#8a9688]">AI-powered applications</span>, intelligent assistants, and
-              software systems for a variety of real-world needs and industries. From automating complex
-              workflows and developing <span className="font-semibold text-[#8a9688]">autonomous AI agents</span> to creating intelligent applications that solve
-              specific business and operational challenges, I focus on engineering complete solutions —
-              from their underlying logic and architecture to their integrations and user experiences.
+              Today, I focus primarily on <span className="font-semibold text-[#8a9688]">AI Engineering</span> — designing and building intelligent applications,
+              <span className="font-semibold text-[#8a9688]"> autonomous AI agents</span>, AI-powered assistants, and systems that combine models, data, tools, and
+              software into practical solutions. My work also extends to business automation, custom
+              software development, web applications, and system integrations, allowing me to engineer
+              complete products from their underlying architecture and backend logic to their interfaces
+              and deployment.
             </p>
             <p>
               I believe great engineering is not simply about making something work. It&apos;s about building
