@@ -1,14 +1,12 @@
-import { Bot, Zap, Code2, Database, ShoppingCart, Server, ShieldCheck, Cpu } from "lucide-react";
+import { Bot, Zap, ShoppingCart, Code2, Database, Server } from "lucide-react";
 
 const caps = [
-  { icon: Bot, title: "AI Agents & Autonomous Systems", desc: "Intelligent agents that reason, use tools, execute tasks, and orchestrate complex workflows." },
-  { icon: Zap, title: "AI-Powered Applications", desc: "End-to-end applications that integrate AI capabilities into practical software products." },
-  { icon: Code2, title: "Intelligent Assistants", desc: "Conversational assistants for customer support, bookings, recommendations, and other real-world interactions." },
-  { icon: Server, title: "Business Process Automation", desc: "Intelligent automation systems that streamline operations and reduce repetitive work." },
-  { icon: Database, title: "RAG & Knowledge Systems", desc: "Systems that retrieve, process, and reason over information to deliver accurate, context-aware responses." },
-  { icon: ShoppingCart, title: "Backend Engineering & APIs", desc: "Building APIs, backend services, databases, and integrations that bring software systems together." },
-  { icon: ShieldCheck, title: "System Architecture & Reliability", desc: "Designing maintainable, scalable, and reliable systems built for real-world use." },
-  { icon: Cpu, title: "AI Infrastructure & Integration", desc: "Building the infrastructure and connecting the services, models, and tools that power intelligent software systems." },
+  { n: "01", icon: Bot, title: "AI Agents & Intelligent Assistants", desc: "Intelligent agents and assistants that reason, use tools, execute tasks, and interact with users across customer support, sales, product discovery, bookings, and business operations." },
+  { n: "02", icon: Zap, title: "Business Automation Systems", desc: "Complete automation systems that streamline business operations, manage workflows, coordinate processes, and connect business functions through intelligent automation." },
+  { n: "03", icon: ShoppingCart, title: "Website & E-commerce Development", desc: "Modern business websites, e-commerce stores, online platforms, digital storefronts, and customized web experiences built around real business needs." },
+  { n: "04", icon: Code2, title: "Custom Software & Web Applications", desc: "Complete software products, SaaS platforms, business management systems, custom web applications, administrative dashboards, and specialized digital platforms." },
+  { n: "05", icon: Database, title: "AI Systems & Data Intelligence", desc: "AI-powered applications, RAG and knowledge systems, intelligent document processing, data analysis, information retrieval, and specialized AI solutions." },
+  { n: "06", icon: Server, title: "Software Integration & Deployment", desc: "Integrating software systems, configuring and adapting existing solutions, engineering backend services and APIs, preparing infrastructure, and deploying reliable production-ready applications." },
 ];
 
 export default function Focus() {
@@ -17,10 +15,16 @@ export default function Focus() {
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Areas of Focus</p>
         <h2 className="display mt-4 text-4xl md:text-6xl font-semibold tracking-tight">What I build.</h2>
+        <p className="mt-4 max-w-2xl text-[var(--text-muted)] leading-relaxed">
+          From intelligent AI systems to complete software products and digital platforms.
+        </p>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)]">
           {caps.map((c) => (
             <div key={c.title} className="bg-[var(--bg-elev)] p-8 hover:bg-[var(--surface)] transition-colors">
-              <c.icon size={22} className="text-[var(--accent)]" />
+              <div className="flex items-center justify-between">
+                <c.icon size={22} className="text-[var(--accent)]" />
+                <span className="font-mono text-xs text-[var(--text-dim)]">{c.n}</span>
+              </div>
               <h3 className="display mt-4 text-lg font-semibold text-[var(--text)]">{c.title}</h3>
               <p className="mt-2 text-sm text-[var(--text-muted)] leading-relaxed">{c.desc}</p>
             </div>
