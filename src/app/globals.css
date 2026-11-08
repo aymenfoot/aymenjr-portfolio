@@ -86,24 +86,74 @@ body {
   }
 }
 
-/* Interaction polish — tactile feedback without visual redesign */
+
+/* Interaction polish — exact motion specifications */
 button, a, [role="button"] {
-  transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1),
+  transition: transform 0.18s ease-out,
               background-color 0.2s ease,
               border-color 0.2s ease,
               color 0.2s ease,
               opacity 0.2s ease;
 }
 
-button:active, a:active, [role="button"]:active {
-  transform: scale(0.97);
+/* Button hover: translateY -2px */
+button:hover, a:hover, [role="button"]:hover {
+  transform: translateY(-2px);
 }
 
+/* Button press: scale 0.96, translateY 0, 120ms */
+button:active, a:active, [role="button"]:active {
+  transform: scale(0.96) translateY(0px);
+  transition-duration: 0.12s;
+}
+
+/* Icon buttons: scale 0.92 on press, 140ms */
+button svg, a svg, [role="button"] svg {
+  transition: transform 0.14s cubic-bezier(0.22, 1, 0.36, 1);
+}
+button:active svg, a:active svg, [role="button"]:active svg {
+  transform: scale(0.92);
+}
+
+/* Interactive cards: hover translateY -3px, press scale 0.985 */
+.surface, .surface-glass {
+  transition: transform 0.18s ease-out,
+              background-color 0.2s ease,
+              border-color 0.2s ease;
+}
+.surface:hover, .surface-glass:hover {
+  transform: translateY(-3px);
+}
+.surface:active, .surface-glass:active {
+  transform: scale(0.985);
+  transition-duration: 0.12s;
+}
+
+/* Expandable open/close transitions */
+.expandable-content {
+  transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.expandable-content.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.expandable-content.closed {
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  button, a, [role="button"] {
+  button, a, [role="button"], .surface, .surface-glass {
     transition: none;
   }
-  button:active, a:active, [role="button"]:active {
+  button:hover, a:hover, [role="button"]:hover,
+  .surface:hover, .surface-glass:hover {
+    transform: none;
+  }
+  button:active, a:active, [role="button"]:active,
+  .surface:active, .surface-glass:active {
     transform: none;
   }
 }
