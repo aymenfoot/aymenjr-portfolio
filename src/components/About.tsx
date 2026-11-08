@@ -46,12 +46,6 @@ export default function About() {
             I believe great engineering is not simply about making something work. It&apos;s about building
             something useful, reliable, and thoughtfully designed.
           </p>
-          <div className="pt-6 border-t border-[var(--border)] flex items-baseline gap-6">
-            <div>
-              <div className="display text-5xl font-semibold text-[var(--text)]">03</div>
-              <div className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)] mt-1">Systems built</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
