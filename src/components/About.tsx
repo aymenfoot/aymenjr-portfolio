@@ -19,32 +19,32 @@ export default function About() {
               intelligent software systems.
             </p>
             <p>
-              My journey began with exploring AI automation tools like n8n. But my curiosity quickly went
+              My journey began with exploring <span className="font-semibold text-[var(--text)]">AI automation tools like n8n</span>. But my curiosity quickly went
               beyond using existing tools. I wanted to understand what happens beneath the surface — how
               software works, how systems are designed, and how intelligence can be engineered into real
               applications.
             </p>
             <p>
-              That curiosity led me into programming, starting with C++ and then Python, before expanding
-              into AI Engineering and software development. Through independent learning, structured
+              That curiosity led me into programming, starting with <span className="font-semibold text-[var(--text)]">C++ and then Python</span>, before expanding
+              into <span className="font-semibold text-[var(--text)]">AI Engineering and software development</span>. Through independent learning, structured
               courses, and continuous experimentation, I began developing the technical foundations needed
               to build systems of my own.
             </p>
             <p>
-              <span className="text-[var(--text)] font-medium">What matters most to me is turning ideas into working products.</span> I enjoy taking a problem,
+              What matters most to me is <span className="text-[var(--text)] font-semibold">turning ideas into working products</span>. I enjoy taking a problem,
               understanding its requirements, designing the underlying system, and bringing the solution to
               life through code.
             </p>
             <p>
-              Today, I independently design and build AI-powered applications, intelligent assistants, and
+              Today, I independently design and build <span className="font-semibold text-[var(--text)]">AI-powered applications</span>, intelligent assistants, and
               software systems for a variety of real-world needs and industries. From automating complex
-              workflows and developing autonomous AI agents to creating intelligent applications that solve
+              workflows and developing <span className="font-semibold text-[var(--text)]">autonomous AI agents</span> to creating intelligent applications that solve
               specific business and operational challenges, I focus on engineering complete solutions —
               from their underlying logic and architecture to their integrations and user experiences.
             </p>
             <p>
               I believe great engineering is not simply about making something work. It&apos;s about building
-              something useful, reliable, and thoughtfully designed.
+              something <span className="font-semibold text-[var(--text)]">useful, reliable, and thoughtfully designed</span>.
             </p>
           </div>
         </div>
