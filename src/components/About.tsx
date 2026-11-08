@@ -15,7 +15,7 @@ export default function About() {
         <div className="lg:col-span-8">
           <div className="max-w-prose space-y-8 text-[var(--text-muted)] leading-[1.7] text-base md:text-lg">
             <p>
-              I&apos;m Aymen Jr., an <span className="font-semibold text-[#d8dcd4]">AI Engineer and independent builder</span> focused on designing and building
+              I&apos;m <span className="font-semibold text-[#d8dcd4]">Aymen Jr.</span>, an <span className="font-semibold text-[#d8dcd4]">AI Engineer and independent builder</span> focused on designing and building
               intelligent software systems.
             </p>
             <p>
