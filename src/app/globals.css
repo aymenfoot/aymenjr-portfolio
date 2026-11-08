@@ -85,3 +85,8 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Scroll offset for fixed navigation header */
+section[id] {
+  scroll-margin-top: 80px;
+}
