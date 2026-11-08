@@ -49,7 +49,7 @@ export default function Hero() {
             </a>
             <a
               href="#what-i-build"
-              className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium hover:bg-[var(--accent)] hover:text-[var(--bg)] transition"
+              className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[var(--border-strong)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
             >
               What Can I Build for You?
               <span className="text-xs">→</span>
