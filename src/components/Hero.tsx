@@ -34,16 +34,27 @@ export default function Hero() {
             From AI agents and intelligent automation to full-stack applications, I turn ideas into practical software systems.
           </motion.p>
 
-          <motion.a
-            href="#about"
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[var(--border-strong)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition mb-6"
+            className="flex flex-wrap items-center gap-4 mb-6"
           >
-            Meet the engineer behind the projects
-            <span className="text-xs">→</span>
-          </motion.a>
+            <a
+              href="#about"
+              className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[var(--border-strong)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+            >
+              Meet the engineer behind the projects
+              <span className="text-xs">→</span>
+            </a>
+            <a
+              href="#what-i-build"
+              className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[var(--border-strong)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+            >
+              What I Build
+              <span className="text-xs">→</span>
+            </a>
+          </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col sm:flex-row gap-3">
@@ -52,9 +63,6 @@ export default function Hero() {
             </a>
             <a href="#contact" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-[var(--border-strong)] text-[var(--text)] font-medium hover:bg-[var(--surface)] transition">
               Get In Touch
-            </a>
-            <a href="#what-i-build" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--surface)] border border-[var(--accent)] text-[var(--accent)] font-medium hover:bg-[var(--accent)] hover:text-[var(--bg)] transition">
-              What I Build
             </a>
           </motion.div>
 
