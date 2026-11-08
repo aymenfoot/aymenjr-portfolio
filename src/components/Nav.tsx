@@ -79,19 +79,17 @@ export default function Nav() {
             {open ? "✕" : "☰"}
           </button>
         </nav>
-        {open && (
-          <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg-elev)]">
-            <ul className="px-6 py-4 space-y-3">
-              {links.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} onClick={() => setOpen(false)} className="block text-sm text-[var(--text-muted)] hover:text-[var(--text)]">
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className={"md:hidden border-t border-[var(--border)] bg-[var(--bg-elev)] mobile-menu overflow-hidden " + (open ? "open" : "closed")}>
+          <ul className="px-6 py-4 space-y-3">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} onClick={() => setOpen(false)} className="block text-sm text-[var(--text-muted)] hover:text-[var(--text)]">
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </header>
     </>
   );

@@ -87,9 +87,11 @@ body {
 }
 
 
-/* Interaction polish — exact motion specifications */
+
+
+/* Interaction polish — premium motion system */
 button, a, [role="button"] {
-  transition: transform 0.18s ease-out,
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
               background-color 0.2s ease,
               border-color 0.2s ease,
               color 0.2s ease,
@@ -117,7 +119,7 @@ button:active svg, a:active svg, [role="button"]:active svg {
 
 /* Interactive cards: hover translateY -3px, press scale 0.985 */
 .surface, .surface-glass {
-  transition: transform 0.18s ease-out,
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
               background-color 0.2s ease,
               border-color 0.2s ease;
 }
@@ -129,7 +131,7 @@ button:active svg, a:active svg, [role="button"]:active svg {
   transition-duration: 0.12s;
 }
 
-/* Expandable open/close transitions */
+/* Expandable content transitions */
 .expandable-content {
   transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
@@ -141,6 +143,21 @@ button:active svg, a:active svg, [role="button"]:active svg {
 .expandable-content.closed {
   opacity: 0;
   transform: translateY(6px) scale(0.98);
+}
+
+/* Mobile menu smooth open/close */
+.mobile-menu {
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mobile-menu.closed {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
 }
 
 /* Reduced motion */
@@ -155,5 +172,8 @@ button:active svg, a:active svg, [role="button"]:active svg {
   button:active, a:active, [role="button"]:active,
   .surface:active, .surface-glass:active {
     transform: none;
+  }
+  .expandable-content, .mobile-menu {
+    transition: none;
   }
 }
