@@ -11,7 +11,7 @@ const caps = [
 
 export default function Focus() {
   return (
-    <section id="focus" className="py-16 md:py-24 bg-[var(--bg-elev)]">
+    <section id="what-i-build" className="py-16 md:py-24 bg-[var(--bg-elev)]">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Areas of Focus</p>
         <h2 className="display mt-4 text-4xl md:text-6xl font-semibold tracking-tight">What I build.</h2>

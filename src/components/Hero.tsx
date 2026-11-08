@@ -53,6 +53,9 @@ export default function Hero() {
             <a href="#contact" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-[var(--border-strong)] text-[var(--text)] font-medium hover:bg-[var(--surface)] transition">
               Get In Touch
             </a>
+            <a href="#what-i-build" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--surface)] border border-[var(--accent)] text-[var(--accent)] font-medium hover:bg-[var(--accent)] hover:text-[var(--bg)] transition">
+              What I Build
+            </a>
           </motion.div>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.7 }}
