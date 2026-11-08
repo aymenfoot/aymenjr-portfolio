@@ -62,7 +62,8 @@ export default function Projects() {
           <span className="text-[var(--accent)]">Engineered with intelligence.</span>
         </h2>
         <p className="mt-6 max-w-2xl text-[var(--text-muted)] leading-relaxed">
-          A selection of AI-powered applications and intelligent systems I&apos;ve designed and developed.
+          Here are three of my latest projects, showcasing a selection of the intelligent systems and
+          software solutions I&apos;ve designed and developed.
         </p>
       </div>
 
